@@ -1,4 +1,3 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -22,6 +21,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Onecoin_logo.svg/200px-Onecoin_logo.svg.png" alt="Onecoin Logo" width="80"/>
     <h1>مؤسسة Onecoin</h1>
