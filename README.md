@@ -1,2 +1,0 @@
-# Onecoin
-Official Onecoin Foundation
