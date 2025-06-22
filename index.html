@@ -2,92 +2,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Onecoin Foundation</title>
+  <meta charset="UTF-8">
+  <title>Onecoin Foundation | Official Launch</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official platform for Onecoin - a transparent, future-ready digital currency.">
   <style>
     body {
-      background-color: #0e0e0e;
-      color: #ffffff;
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 20px;
+      background-color: #0d1117;
+      color: #f0f6fc;
+      font-family: 'Segoe UI', sans-serif;
     }
     header {
-      background-color: #111;
-      padding: 20px;
+      background-color: #161b22;
       text-align: center;
+      padding: 40px 20px;
     }
-    h1 {
-      color: #00d9ff;
-      font-size: 2.5em;
-      margin: 0;
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      color: #58a6ff;
     }
-    section {
+    header p {
+      font-size: 1.2em;
+      color: #c9d1d9;
+    }
+    .menu-toggle {
+      position: fixed;
+      top: 15px;
+      left: 20px;
+      background-color: #30363d;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+      z-index: 999;
+    }
+    .menu {
+      display: none;
+      position: fixed;
+      top: 60px;
+      left: 20px;
+      background-color: #161b22;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #00000088;
+    }
+    .menu a {
+      display: block;
+      color: #58a6ff;
+      text-decoration: none;
+      margin: 12px 0;
+      font-size: 1em;
+    }
+    .menu a:hover {
+      text-decoration: underline;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section h2 {
+      color: #79c0ff;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+    .section p {
+      line-height: 1.8;
+      font-size: 1.05em;
+      color: #d1d5db;
+    }
+    .login-btn {
+      display: inline-block;
+      background-color: #238636;
+      color: white;
+      font-size: 1.1em;
+      padding: 14px 30px;
+      border-radius: 10px;
+      text-decoration: none;
       margin-top: 30px;
     }
-    h2 {
-      color: #00ffc8;
-    }
-    p {
-      font-size: 1.1em;
-      line-height: 1.6em;
+    .login-btn:hover {
+      background-color: #2ea043;
     }
     footer {
+      background-color: #161b22;
       text-align: center;
-      margin-top: 50px;
+      padding: 20px;
+      color: #9ca3af;
       font-size: 0.9em;
-      color: #aaa;
     }
   </style>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('mainMenu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
 </head>
 <body>
+
+  <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+  <div id="mainMenu" class="menu">
+    <a href="buy.html">🛒 Buy ONE</a>
+    <a href="faq.html">❓ FAQ</a>
+    <a href="wallet.html">🪙 Wallet</a>
+    <a href="foundation.html">📩 Contact Us</a>
+  </div>
+
   <header>
-    <h1>Onecoin Foundation</h1>
-    <p>🚀 Official Digital Currency Initiative</p>
+    <h1>🚀 Welcome to Onecoin</h1>
+    <p>A transparent, secure and limited digital currency</p>
   </header>
 
-  <section>
-    <h2>🔷 Coin Information</h2>
-    <p><strong>Name:</strong> Onecoin<br>
-       <strong>Symbol:</strong> ONE<br>
-       <strong>Total Supply:</strong> 20,000,000 ONE<br>
-       <strong>Initial Price:</strong> 10 USD per ONE<br>
-       <strong>Payment Method:</strong> USDT</p>
-  </section>
+  <div class="section">
+    <h2>About Onecoin</h2>
+    <p>Onecoin (ONE) is a next-generation cryptocurrency based on Bitcoin’s blockchain with Proof-of-Work (PoW). Each block is mined every 10 minutes, maintaining decentralization and network security.</p>
 
-  <section>
-    <h2>🔷 Distribution</h2>
-    <ul>
-      <li>2,000,000 ONE – Founder Allocation</li>
-      <li>1,000,000 ONE – Reserve (Platform)</li>
-      <li>2,000,000 ONE – Development and Updates</li>
-      <li>15,000,000 ONE – Mining (with halving every 4 years)</li>
-    </ul>
-  </section>
+    <h2>Tokenomics</h2>
+    <p>Total Supply: 20,000,000 ONE</p>
+    <p>🔹 15M for mining<br>
+       🔹 2M for the founder (10%)<br>
+       🔹 2M for development<br>
+       🔹 1M for liquidity reserve</p>
 
-  <section>
-    <h2>🔷 Presale Details</h2>
-    <p>
-      Phase 1: 50,000 ONE available<br>
-      Max purchase per user: 50,000 USD<br>
-      Allocation: 70% to development / 30% to founder<br>
-      All tokens are stored in user accounts until blockchain smart contract is activated.
-    </p>
-  </section>
+    <h2>Why Onecoin?</h2>
+    <p>✔ Real project with open-source code<br>
+       ✔ Immediate token availability<br>
+       ✔ Clear, audited distribution<br>
+       ✔ Fixed price at $10 per ONE<br>
+       ✔ Payment with USDT via Trust Wallet or compatible apps</p>
 
-  <section>
-    <h2>🔷 Platform & Admin Access</h2>
-    <p>
-      GitHub: <a href="https://github.com/Onepans/Onecoin" target="_blank">Onecoin Repository</a><br>
-      Admin Username: <strong>Onecoin</strong><br>
-      Admin Password: <strong>Onecoin@2025rs20042008</strong><br>
-      Admin Email: <strong>sazmosicrifet@gmail.com</strong>
-    </p>
-  </section>
+    <a href="login.html" class="login-btn">🔐 Login or Create Account</a>
+  </div>
+
+  <div class="section" style="background-color:#0b1623; border-radius:12px;">
+    <h2>🌍 Don’t Miss the Digital Revolution</h2>
+    <p>Did you miss Bitcoin? Here’s your second chance.<br>
+       Join the first wave of ONE holders and help shape the future of decentralized finance.<br><br>
+       🔐 Onecoin – Not built for speculation… but for leadership.</p>
+  </div>
 
   <footer>
     &copy; 2025 Onecoin Foundation. All rights reserved.
   </footer>
+
 </body>
 </html>
