@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login / Sign Up | Onecoin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login or sign up to your Onecoin account.">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f6fc;
+    }
+    header {
+      background-color: #161b22;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 {
+      font-size: 2.2em;
+      color: #58a6ff;
+    }
+    .container {
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #00000060;
+    }
+    .tabs {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .tabs button {
+      flex: 1;
+      padding: 12px;
+      font-size: 1em;
+      background-color: #21262d;
+      color: #f0f6fc;
+      border: none;
+      cursor: pointer;
+    }
+    .tabs button.active {
+      background-color: #238636;
+    }
+    .form {
+      display: none;
+    }
+    .form.active {
+      display: block;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+      color: #d1d5db;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+      color: white;
+      border-radius: 6px;
+    }
+    button.submit-btn {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      font-size: 1.1em;
+      background-color: #238636;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button.submit-btn:hover {
+      background-color: #2ea043;
+    }
+  </style>
+  <script>
+    function showTab(tab) {
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('signupForm').classList.remove('active');
+      document.getElementById(tab).classList.add('active');
+
+      document.getElementById('btnLogin').classList.remove('active');
+      document.getElementById('btnSignup').classList.remove('active');
+      document.getElementById('btn' + tab.charAt(0).toUpperCase() + tab.slice(1)).classList.add('active');
+    }
+
+    function redirectToDashboard() {
+      window.location.href = 'dashboard.html';
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 Welcome to Onecoin</h1>
+    <p>Login or create a secure account</p>
+  </header>
+
+  <div class="container">
+    <div class="tabs">
+      <button id="btnLogin" class="active" onclick="showTab('loginForm')">Login</button>
+      <button id="btnSignup" onclick="showTab('signupForm')">Sign Up</button>
+    </div>
+
+    <div id="loginForm" class="form active">
+      <label for="emailLogin">Email</label>
+      <input type="text" id="emailLogin" placeholder="you@example.com">
+
+      <label for="passwordLogin">Password</label>
+      <input type="password" id="passwordLogin" placeholder="••••••••">
+
+      <button class="submit-btn" onclick="redirectToDashboard()">Login</button>
+    </div>
+
+    <div id="signupForm" class="form">
+      <label for="username">Full Name</label>
+      <input type="text" id="username" placeholder="John Doe">
+
+      <label for="emailSignup">Email</label>
+      <input type="text" id="emailSignup" placeholder="you@example.com">
+
+      <label for="passwordSignup">Password</label>
+      <input type="password" id="passwordSignup" placeholder="Choose a secure password">
+
+      <button class="submit-btn" onclick="redirectToDashboard()">Create Account</button>
+    </div>
+  </div>
+
+</body>
+</html>
