@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Settings | Onecoin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manage your Onecoin account settings and preferences.">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f6fc;
+    }
+    header {
+      background-color: #161b22;
+      padding: 20px 30px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 1.6em;
+      color: #58a6ff;
+      margin: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background-color: #161b22;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 12px #00000060;
+    }
+    label {
+      display: block;
+      margin-top: 20px;
+      margin-bottom: 6px;
+      color: #d1d5db;
+      font-weight: bold;
+    }
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #30363d;
+      background-color: #0d1117;
+      color: white;
+      font-size: 1em;
+    }
+    input[type="file"] {
+      padding: 10px;
+      background-color: #0d1117;
+      color: #58a6ff;
+    }
+    button {
+      margin-top: 30px;
+      padding: 14px 28px;
+      background-color: #238636;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+    .preview {
+      margin-top: 10px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 2px solid #58a6ff;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>⚙️ Account Settings</h1>
+  </header>
+
+  <div class="container">
+    <form>
+      <label for="profilePic">Profile Picture</label>
+      <input type="file" id="profilePic" accept="image/*" onchange="previewImage(event)">
+      <img id="profilePreview" class="preview" src="" alt="Preview" style="display:none;" />
+
+      <label for="username">Full Name</label>
+      <input type="text" id="username" placeholder="Your full name">
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@example.com">
+
+      <label for="walletPin">Change Wallet PIN</label>
+      <input type="password" id="walletPin" maxlength="6" placeholder="New 6-digit PIN">
+
+      <label for="password">Change Password</label>
+      <input type="password" id="password" placeholder="New account password">
+
+      <button type="submit">💾 Save Changes</button>
+    </form>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const img = document.getElementById('profilePreview');
+      img.src = URL.createObjectURL(event.target.files[0]);
+      img.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
