@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Wallet | Onecoin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Access your Onecoin wallet securely.">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f6fc;
+    }
+    header {
+      background-color: #161b22;
+      padding: 30px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #58a6ff;
+    }
+    .container {
+      max-width: 450px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #161b22;
+      border-radius: 12px;
+      box-shadow: 0 0 12px #00000060;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #d1d5db;
+    }
+    input[type="password"], input[type="text"] {
+      width: 100%;
+      padding: 14px;
+      font-size: 1em;
+      margin-bottom: 20px;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      background-color: #0d1117;
+      color: #ffffff;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1em;
+      background-color: #238636;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+    .wallet-info {
+      display: none;
+      margin-top: 30px;
+    }
+    .wallet-info h2 {
+      color: #58a6ff;
+      margin-bottom: 20px;
+    }
+    .wallet-info p {
+      background-color: #0d1117;
+      padding: 12px;
+      border-left: 4px solid #58a6ff;
+      margin-bottom: 12px;
+      color: #d1d5db;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🔐 My Wallet</h1>
+    <p>Enter your 6-digit PIN to access your ONE wallet</p>
+  </header>
+
+  <div class="container">
+    <label for="pin">6-Digit Access PIN</label>
+    <input type="password" id="pin" maxlength="6" placeholder="••••••" inputmode="numeric" pattern="[0-9]*">
+
+    <button onclick="accessWallet()">Access Wallet</button>
+
+    <div id="walletInfo" class="wallet-info">
+      <h2>🪙 Wallet Overview</h2>
+      <p><strong>Wallet Address:</strong> 0xAbCdEf1234567890</p>
+      <p><strong>ONE Balance:</strong> 2,000 ONE</p>
+      <p><strong>Total Value:</strong> $20,000 USDT</p>
+      <p><strong>Status:</strong> Active</p>
+    </div>
+  </div>
+
+  <script>
+    function accessWallet() {
+      const pin = document.getElementById('pin').value;
+      const walletSection = document.getElementById('walletInfo');
+
+      if (pin.length === 6 && /^[0-9]+$/.test(pin)) {
+        walletSection.style.display = 'block';
+      } else {
+        alert('Please enter a valid 6-digit PIN.');
+      }
+    }
+  </script>
+
+</body>
+</html>
