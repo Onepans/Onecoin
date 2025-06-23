@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact Us | Onecoin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f6fc;
+    }
+    header {
+      background-color: #161b22;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #58a6ff;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #161b22;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 12px #00000060;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      background-color: #0d1117;
+      color: white;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      resize: vertical;
+    }
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 14px;
+      font-size: 1.1em;
+      background-color: #238636;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+    .info {
+      margin-top: 30px;
+      font-size: 0.9em;
+      color: #8b949e;
+      text-align: center;
+    }
+  </style>
+  <script>
+    function submitMessage() {
+      alert("✅ Your message has been sent! We'll get back to you shortly.");
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>📬 Contact Onecoin Foundation</h1>
+    <p>We're here to support you</p>
+  </header>
+
+  <div class="container">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Full Name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="you@example.com" required>
+
+    <label for="message">Message</label>
+    <textarea id="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+    <button onclick="submitMessage()">Send Message</button>
+
+    <div class="info">
+      You can also reach us at: <br>
+      <strong>info@onecoin.foundation</strong>
+    </div>
+  </div>
+
+</body>
+</html>
