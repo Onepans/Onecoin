@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buy ONE | Onecoin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f6fc;
+    }
+    header {
+      background-color: #161b22;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #58a6ff;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #161b22;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 12px #00000060;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      font-size: 1em;
+      background-color: #0d1117;
+      color: white;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+    }
+    .total {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #79c0ff;
+    }
+    button {
+      width: 100%;
+      margin-top: 30px;
+      padding: 14px;
+      font-size: 1.1em;
+      background-color: #238636;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+    .info {
+      margin-top: 30px;
+      background-color: #0d1117;
+      padding: 15px;
+      border-left: 4px solid #58a6ff;
+    }
+  </style>
+  <script>
+    function calculateTotal() {
+      const quantity = parseFloat(document.getElementById('quantity').value) || 0;
+      const total = quantity * 10;
+      document.getElementById('totalDisplay').innerText = total.toFixed(2) + " USDT";
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>🛒 Buy ONE</h1>
+    <p>Fixed price: 1 ONE = $10 USDT</p>
+  </header>
+
+  <div class="container">
+    <label for="wallet">Your Wallet Address</label>
+    <input type="text" id="wallet" placeholder="0xABC123..." required>
+
+    <label for="quantity">How many ONE coins to buy?</label>
+    <input type="number" id="quantity" placeholder="Enter quantity" oninput="calculateTotal()" required>
+
+    <div class="total">
+      Total: <span id="totalDisplay">0.00 USDT</span>
+    </div>
+
+    <button onclick="alert('✅ Purchase request received. You will receive confirmation instructions shortly.')">
+      Confirm Purchase
+    </button>
+
+    <div class="info">
+      💡 After confirming, follow the instructions to send payment in USDT.<br>
+      Once received, your ONE tokens will be delivered to the wallet you provided.
+    </div>
+  </div>
+
+</body>
+</html>
