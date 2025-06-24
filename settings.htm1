@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Settings | Onecoin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #f0f6fc;
+    }
+    header {
+      background-color: #161b22;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      color: #58a6ff;
+    }
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background-color: #161b22;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px #00000060;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      background-color: #0d1117;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      color: #f0f6fc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      font-size: 1.1em;
+      background-color: #238636;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2ea043;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      document.getElementById('name').value = localStorage.getItem("userName") || "";
+      document.getElementById('wallet').value = localStorage.getItem("userWallet") || "";
+      document.getElementById('pin').value = localStorage.getItem("userPIN") || "";
+    };
+
+    function saveSettings() {
+      localStorage.setItem("userName", document.getElementById('name').value);
+      localStorage.setItem("userWallet", document.getElementById('wallet').value);
+      localStorage.setItem("userPIN", document.getElementById('pin').value);
+      alert("✅ Settings updated successfully!");
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <h1>⚙️ Account Settings</h1>
+  </header>
+
+  <div class="container">
+    <label for="name">👤 Name</label>
+    <input type="text" id="name" placeholder="Enter your name">
+
+    <label for="wallet">🔐 Wallet Address</label>
+    <input type="text" id="wallet" placeholder="0xABC123...">
+
+    <label for="pin">🔒 Wallet PIN (6 digits)</label>
+    <input type="password" id="pin" maxlength="6" placeholder="******">
+
+    <button onclick="saveSettings()">💾 Save Settings</button>
+  </div>
+
+</body>
+</html>
